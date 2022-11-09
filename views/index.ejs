@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<h1>
+    <%=kindofday %>
+</h1>
+
+<ul>
+    <!-- using foreach loop for rendering the data; -->
+    <% lists.forEach(function(item){%>
+        <form action="/delete" method="post">
+
+            <li>
+                <input type="checkbox" onclick="this.form.submit()" value="<%=item._id%>" name="checkbox">
+                <%=item.name%>
+            </li>
+        </form>
+        <% }) %>
+</ul>
+
+<form action="/" method="post">
+    <input type="text" placeholder="Enter..." name="newItem">
+    <button type="submit" name="sub_btn">Add</button>
+</form>
+
+<body>
+
+
+
+</body>
+
+</html>
