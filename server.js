@@ -14,6 +14,7 @@ app.use(express.static("public"));
 
 mongoose.connect(
   "mongodb+srv://admin-hero:test123@cluster0.gxfyvlz.mongodb.net/todolistdb",
+  // "mongodb://127.0.0.1/todolist",
   {
     useNewUrlParser: true,
   }
@@ -21,7 +22,6 @@ mongoose.connect(
 const itemschema = {
   name: {
     type: String,
-    required: true,
   },
 };
 const item = mongoose.model("Item", itemschema);
@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
       res.redirect("/");
     } else {
       if (!err) {
-        res.render("index", { kindofday: "Today", lists: result });
+        res.render("index", { kindofday: "TODAY", lists: result });
       } else console.log("error in reading data from the db");
     }
   });
@@ -81,3 +81,6 @@ if (port == null || port == "") {
 app.listen(port, () => {
   console.log("server has started successfully...");
 });
+
+// uploaded to
+// https://infinite-wave-92837.herokuapp.com/

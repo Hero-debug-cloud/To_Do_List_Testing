@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    display:flex;
+    /* justify-content:center; */
+    align-items:center;
+    height:99vh;
+    width:99vw;
+    flex-direction: column;
+    /* border:1px solid red; */
+}
+.heading{
+    font-weight: bolder;
+    margin:6vh;
+}
+.adding{
+    padding:10px;
+    width:15vw;
+    border-radius: 7px;
+    border:1px solid black;
+    margin-bottom: 4vh;
+}
+.submit{
+    padding:8px;
+    width:5vw;
+}
+.list-cover{
+    /* border:1px solid red; */
+    margin-right:10vw;
+}
+li{
+    font-size: 3vh;
+    list-style: none;
+}
+.checkbox{
+    margin-right: 0.6vw;
+}
+
+
+/* marking responsive for the phone users */
+@media (max-width:500px){
+    .adding{
+        width:35vw;
+    }
+    .submit{
+        width:15vw;
+    }
+}
